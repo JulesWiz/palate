@@ -1,10 +1,14 @@
 Palate::Application.routes.draw do
-  resources :users
 
-  root 'users#index'
+  get 'new_user'  => "users#new"
 
-  get 'users'     => 'users#index'
-  post 'users'    => 'users#create'
-  get 'new_user'  => 'users#new'
+  scope :api do
+    get '' => "api#index", as: :api, defaults: {format: :json}
+
+
+    resources :users, except: [ :edit, :new ], defaults: {format: :json} do
+      get ':id' => "users#show", on: :collection
+    end
+  end
 
 end

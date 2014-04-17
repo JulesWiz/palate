@@ -14,7 +14,7 @@ namespace :db do
       user.first_name             = Faker::Name.first_name
       user.last_name              = Faker::Name.last_name
       user.description            = Faker::Lorem.sentence
-      user.facebook               = Faker::Lorem.characters
+      user.facebook               = Faker::Internet.user_name
       user.mobile_number          = Faker::PhoneNumber.cell_phone
       user.street_address1        = Faker::Address.street_address
       user.street_address2        = Faker::Address.secondary_address
