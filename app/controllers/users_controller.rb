@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    render text: 'Welcome to Palate'
+    @users = User.all
   end
 
-  def new
-    render text: 'This is the new page for user'
+  def show
+    @user = User.find_by_id(params[:id])
   end
+
 
 end
