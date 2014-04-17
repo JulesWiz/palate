@@ -1,0 +1,10 @@
+<%= form_for :user, url: login_url, method: :post, html: { id: "loginform" } do |f| %>
+  <fieldset>
+    <legend>Please Sign In</legend>
+      <%= f.label :email %>
+      <%= f.text_field :email, placeholder: "Email Address" %>
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "Password" %>
+      <%= f.submit "Sign In" %>
+  </fieldset>
+<% end %>

@@ -1,5 +1,10 @@
 Palate::Application.routes.draw do
 
+  root "api#index"
+
+  get 'login' => "session#new"
+  post 'login' => "session#create"
+
   get 'new_user'  => "users#new"
 
   scope :api do
