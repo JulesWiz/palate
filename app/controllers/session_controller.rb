@@ -4,9 +4,8 @@ class SessionController < ApplicationController
   end
 
   def create
-    user = @user
-    session[:user_id] = user.id
-    redirect_to root_url
+    # @user.id = User.find_by(id: session[:user_id])
+    # redirect_to api_url
   end
 
   private
